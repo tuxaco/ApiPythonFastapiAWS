@@ -44,16 +44,16 @@ jobs:
       # Step 7
       - name: Create Zipfile archive of Dependencies
         run: |
-          cd .venv/Lib/site-packages
-          zip -r9 ../../../lamba.zip .
+          cd ./venv/lib/python3.9/site-packages
+          zip -r9 ../../../../api.zip .
       
       # Step 8
       - name: Add App to Zip file
-        run: cd ./api && zip -g ../lambda.zip -r .
+        run: cd ./api && zip -g ../api.zip -r .
       
       # Step 9
       - name: Upload zip file artifact
         uses: actions/upload-artifact@v2
         with:
           name: api
-          path: lambda.zip
+          path: api.zip
