@@ -44,7 +44,7 @@ jobs:
       # Step 7
       - name: Create Zipfile archive of Dependencies
         run: |
-          cd .\venv\Lib\site-packages
+          cd .venv/Lib/site-packages
           zip -r9 ../../../lamba.zip .
       
       # Step 8
