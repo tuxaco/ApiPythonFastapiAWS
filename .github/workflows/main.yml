@@ -71,6 +71,15 @@ jobs:
       #    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       #    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #    AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      - name: Test
+        env:
+          TEST_GITHUB_TOKEN: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          TEST_SECRET: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TEST_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        run: |
+          echo ${#TEST_GITHUB_TOKEN}
+          echo ${#TEST_SECRET}
+          echo ${#TEST_REGION}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
