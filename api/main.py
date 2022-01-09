@@ -7,7 +7,7 @@ app.include_router(router, prefix='/v1')
 
 @app.get("/")
 def read_root():
-    return {"Hola Caracolas": "From FastAPI & API Gateway"}
+    return {"Hola Caracolas": "From FastAPI & API Gateway - SAMUEL"}
 
 
 handler = Mangum(app=app)
