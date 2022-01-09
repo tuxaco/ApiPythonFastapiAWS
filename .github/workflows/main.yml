@@ -59,6 +59,7 @@ jobs:
           path: api.zip
   continuous-deployment:
     runs-on: ubuntu-latest
+    environment: aws
     needs: [continuous-integration]
     if: github.ref == 'refs/heads/main'
     steps:
